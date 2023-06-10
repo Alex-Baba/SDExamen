@@ -1,0 +1,3 @@
+fortune | cowsay | grep is
+ls -l | grep SD
+fortune | cowsay | lolcat

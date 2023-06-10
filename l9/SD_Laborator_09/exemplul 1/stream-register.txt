@@ -1,0 +1,5 @@
+app register --name command-source --type source --uri file:////home/student/SD/homeworks-1311a-IulianMurariu-Tanasache/l9/SD_Laborator_09/exemplul%201/DataFlow%20Source/target/DataFlowSource-1.0-SNAPSHOT.jar
+app register --name command-processor --type processor --uri file:////home/student/SD/homeworks-1311a-IulianMurariu-Tanasache/l9/SD_Laborator_09/exemplul%201/DataFlow%20Processor/target/DataFlowProcessor-1.0-SNAPSHOT.jar
+app register --name command-sink --type sink --uri file:////home/student/SD/homeworks-1311a-IulianMurariu-Tanasache/l9/SD_Laborator_09/exemplul%201/DataFlow%20Sink/target/DataFlowSink-1.0-SNAPSHOT.jar
+stream create --name command-pipe --definition 'command-source | command-processor | command-sink'
+stream deploy --name command-pipe
