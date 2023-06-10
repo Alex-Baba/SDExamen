@@ -1,0 +1,24 @@
+spring:
+  datasource:
+    url: jdbc:sqlite:cache.db
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: student
+    password: student
+
+library:
+  rabbitmq:
+    stare:
+      queue: l6.stareQueue
+      exchange: libraryappL6.direct
+      routingkey: l6.stareKey
+    comenzi:
+      queue: l6.comenziQueue
+      exchange: libraryappL6.direct
+      routingkey: l6.comenziKey
+    fisiere:
+      queue: l6.fisiereQueue
+      exchange: libraryappL6.direct
+      routingkey: l6.fisiereKey
+
