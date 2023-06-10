@@ -1,0 +1,9 @@
+----------------------------------------
+Licitatia a inceput la: 2022-06-21 12:01:41.074268
+Licitatia s-a incheiat la: 2022-06-21 12:02:15.220110
+Licitatia a durat: 34.145842
+Licitatia a avut: 1 bidderi
+Licitatia a filtrat: 3 mesaje
+Licitatia a fost castigata de: Bidder 9d7b6cde-64a9-4ca5-8ecd-3b97833baec8  cu  castigat cu 3991
+----------------------------------------
+

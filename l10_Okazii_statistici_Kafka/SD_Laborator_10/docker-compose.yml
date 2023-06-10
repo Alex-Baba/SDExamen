@@ -1,0 +1,36 @@
+version: "3.7"
+
+services:
+  auctioneer:
+    build:
+      context: .
+      dockerfile: ./Okazii_v2/Auctioneer/Dockerfile
+    network_mode: "host"
+
+  bidder:
+    build:
+      context: .
+      dockerfile: ./Okazii_v2/Bidder/Dockerfile
+    network_mode: "host"
+    depends_on:
+      - "auctioneer"
+
+  bidding_processor:
+    build:
+      context: .
+      dockerfile: ./Okazii_v2/BiddingProcessor/Dockerfile
+    network_mode: "host"
+
+  message_processor:
+    build:
+      context: .
+      dockerfile: ./Okazii_v2/MessageProcessor/Dockerfile
+    network_mode: "host"
+
+  monitor:
+    build:
+      context: .
+      dockerfile: ./Okazii_v2/Monitor/Dockerfile
+    network_mode: "host"
+    volumes:
+      - ./logs.txt:/logs.txt

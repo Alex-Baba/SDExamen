@@ -1,0 +1,16 @@
+spring:
+  cloud:
+    stream:
+      bindings:
+        stare00:
+          destination: stare00
+        stare01:
+          destination: stare01
+        stare10:
+          destination: stare10
+        stare11:
+          destination: stare11
+        sink:
+          destination: sink-output
+        source:
+          destination: source-input
