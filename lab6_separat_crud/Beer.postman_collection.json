@@ -1,0 +1,185 @@
+{
+	"info": {
+		"_postman_id": "1e0cebcd-60da-494e-8f67-d5861ce3076c",
+		"name": "Beer",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "20127203"
+	},
+	"item": [
+		{
+			"name": "Create table",
+			"request": {
+				"method": "HEAD",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8081/create_beer_table",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"create_beer_table"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add beer",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8081/add_beer?beer_name=Tuborg&beer_price=8899",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"add_beer"
+					],
+					"query": [
+						{
+							"key": "beer_name",
+							"value": "Tuborg"
+						},
+						{
+							"key": "beer_price",
+							"value": "8899"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get all bears",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8082/get_all_beers",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8082",
+					"path": [
+						"get_all_beers"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get beer by name",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8082/get_bear_by_name?beer_name=Tuborg",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8082",
+					"path": [
+						"get_bear_by_name"
+					],
+					"query": [
+						{
+							"key": "beer_name",
+							"value": "Tuborg"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get beer by price",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8082/get_bear_by_price?beer_price=77",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8082",
+					"path": [
+						"get_bear_by_price"
+					],
+					"query": [
+						{
+							"key": "beer_price",
+							"value": "77"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Beer",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8083/edit_beer?beer_id=1&beer_name=Petrisora&beer_price=1000",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8083",
+					"path": [
+						"edit_beer"
+					],
+					"query": [
+						{
+							"key": "beer_id",
+							"value": "1"
+						},
+						{
+							"key": "beer_name",
+							"value": "Petrisora"
+						},
+						{
+							"key": "beer_price",
+							"value": "1000"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Beer",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8084/delete_beer?beer_name=Petrisora",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8084",
+					"path": [
+						"delete_beer"
+					],
+					"query": [
+						{
+							"key": "beer_name",
+							"value": "Petrisora"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
