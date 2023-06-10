@@ -1,0 +1,22 @@
+version: "3.7"
+
+services:
+  bidder:
+     build:
+      context: ./Bidder_Docker
+     network_mode: "host"
+
+  bidding_processor:
+     build:
+      context: ./Bidding_Processor_Docker
+     network_mode: "host"
+
+  message_processor:
+    build:
+      context: ./Message_Processor_Docker
+    network_mode: "host"
+
+  auctioneer:
+    build:
+      context: ./Auctioneer_Docker
+    network_mode: "host"
