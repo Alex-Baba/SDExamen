@@ -1,0 +1,5 @@
+
+
+    Utilizând funcții serverless sa se implementeze automatul de mai jos:
+     *imagine cu 5 stari*
+    Fiecare stare este gestionata de o functie serverless iar datele vin dintr-o coada pe care o verifica toate. Pentru introducerea datelor in cealalta parte a cozii va fi un serviciu REST care le preia de la utilizator si le pune in cozi.
