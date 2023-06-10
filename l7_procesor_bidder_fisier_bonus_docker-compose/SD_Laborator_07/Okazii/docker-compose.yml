@@ -1,0 +1,45 @@
+version: "3.7"
+
+services:
+  bidder:
+    build:
+      context: .
+      dockerfile: ./BidderMicroservice/Dockerfile
+    network_mode: "host"
+    depends_on:
+      - "auctioneer"
+      - "monitor"
+
+  bidding_processor:
+    build:
+      context: .
+      dockerfile: ./BiddingProcessorMicroservice/Dockerfile
+    network_mode: "host"
+    depends_on:
+      - "monitor"
+
+  message_processor:
+    build:
+      context: .
+      dockerfile: ./MessageProcessorMicroservice/Dockerfile
+    network_mode: "host"
+    depends_on:
+      - "monitor"
+
+  auctioneer:
+    build:
+      context: .
+      dockerfile: ./AuctioneerMicroservice/Dockerfile
+    network_mode: "host"
+    depends_on:
+      - "message_processor"
+      - "monitor"
+      - "bidding_processor"
+
+  monitor:
+    build:
+      context: .
+      dockerfile: ./MonitorMicroservice/Dockerfile
+    network_mode: "host"
+    volumes:
+      - ./logs/logs.txt:/logs/logs.txt
