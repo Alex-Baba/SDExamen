@@ -1,0 +1,35 @@
+version: "3.7"
+
+services:
+  message_manager:
+    build:
+      context: .
+      dockerfile: ./MessageManagerMicroservice/Dockerfile
+    network_mode: "host"
+    depends_on:
+      - "register"
+
+  register:
+    build:
+      context: .
+      dockerfile: ./RegisterMicroservice/Dockerfile
+    network_mode: "host"
+
+  student:
+    build:
+      context: .
+      dockerfile: ./StudentMicroservice/Dockerfile
+    network_mode: "host"
+    depends_on:
+      - "message_manager"
+      - "register"
+
+  teacher:
+    build:
+      context: .
+      dockerfile: ./TeacherMicroservice/Dockerfile
+    network_mode: "host"
+    depends_on:
+      - "message_manager"
+      - "register"
+
