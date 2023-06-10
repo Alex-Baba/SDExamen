@@ -1,0 +1,8 @@
+include 'LocationSearchService'
+include 'TimerService'
+include 'ChainService'
+include 'BlacklistService'
+include 'WeatherForecastService'
+include 'GetCountryService'
+include 'ChainService'
+

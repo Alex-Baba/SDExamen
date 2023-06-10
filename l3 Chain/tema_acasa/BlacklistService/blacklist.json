@@ -1,0 +1,7 @@
+{
+  "DE": ["JP", "RU", "KR"],
+  "RO": ["RU", "DE", "FR"],
+  "JP": ["RO","KR"],
+  "FR": ["IT", "RO"],
+  "UNKOWN": []
+}
