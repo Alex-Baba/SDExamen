@@ -1,0 +1,5 @@
+This  auction has ended.
+Microservice actioneer has error no_bidders
+This  auction has ended.
+Microservice actioneer has error no_bidders
+This  auction has ended.
