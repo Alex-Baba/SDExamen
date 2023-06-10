@@ -1,0 +1,17 @@
+micronaut:
+  application:
+    name: stare3
+  server:
+    port: 8083
+  executors:
+    consumer:
+      type: FIXED
+      number-of-threads: 2
+
+kafka.bootstrap.servers: localhost:9092
+rabbitmq:
+  host: localhost
+  port: 5672
+  username: student
+  password: student
+
