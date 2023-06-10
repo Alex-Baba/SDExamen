@@ -1,0 +1,49 @@
+version: "3.7"
+
+services:
+  replicator:
+    build:
+      context: .
+      dockerfile: ./ReplicatorMicroservice/Dockerfile
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+
+  heartbeat:
+    build:
+      context: .
+      dockerfile: ./HeartbeatMicroservice/Dockerfile
+    environment:
+      REPLICATOR_HOST: ${REPLICATOR_HOST}
+    depends_on:
+      - replicator
+
+  message_manager:
+    build:
+      context: .
+      dockerfile: ./MessageManagerMicroservice/Dockerfile
+    depends_on:
+      - heartbeat
+    environment:
+      HEARTBEAT_HOST: ${HEARTBEAT_HOST}
+
+  teacher:
+    build:
+      context: .
+      dockerfile: ./TeacherMicroservice/Dockerfile
+    depends_on:
+      - message_manager
+      - heartbeat
+    environment:
+      HEARTBEAT_HOST: ${HEARTBEAT_HOST}
+      MESSAGE_MANAGER_HOST: ${MESSAGE_MANAGER_HOST}
+
+  student:
+    build:
+      context: .
+      dockerfile: ./StudentMicroservice/Dockerfile
+    depends_on:
+      - message_manager
+      - heartbeat
+    environment:
+      HEARTBEAT_HOST: ${HEARTBEAT_HOST}
+      MESSAGE_MANAGER_HOST: ${MESSAGE_MANAGER_HOST}
