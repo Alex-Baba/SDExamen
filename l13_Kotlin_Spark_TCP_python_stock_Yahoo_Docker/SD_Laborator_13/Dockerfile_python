@@ -1,0 +1,7 @@
+FROM python:alpine
+
+RUN pip install requests
+
+ADD TCP_stock.py TCP.py
+
+CMD ["python","TCP.py"]

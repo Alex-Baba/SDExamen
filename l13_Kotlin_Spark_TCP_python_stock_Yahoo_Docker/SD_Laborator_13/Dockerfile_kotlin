@@ -1,0 +1,7 @@
+FROM openjdk:8-jdk-alpine
+
+RUN apk --update --no-cache add busybox-extras
+
+ADD ./SparkExample/target/SparkExample-1.0.0-jar-with-dependencies.jar SPARK.jar
+
+ENTRYPOINT ["java","-jar","SPARK.jar"]

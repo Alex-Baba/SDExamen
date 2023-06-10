@@ -1,0 +1,19 @@
+version: "3.7"
+
+services:
+  spark:
+    build:
+      context: .
+      dockerfile: ./Dockerfile_kotlin
+    depends_on:
+      - tcp_server
+
+  tcp_server:
+    build:
+      context: .
+      dockerfile: ./Dockerfile_python
+    healthcheck:
+      test: [ "CMD", "busybox-extras", "telnet", "tcp_server", "9999" ]
+      interval: 1s
+      timeout: 3s
+      retries: 3
