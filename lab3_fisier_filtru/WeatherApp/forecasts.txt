@@ -1,0 +1,6 @@
+___FORECAST___
+
+WeatherForecastData(location=Viena, date=20/06/2022 21:24:30, weatherState=Raining, weatherStateIconURL=https://www.metaweather.com/static/img/weather/png/Raining.png, windDirection=North, windSpeed=43, minTemp=5, maxTemp=41, currentTemp=41, humidity=59)
+
+
+
