@@ -1,0 +1,3 @@
+
+rootProject.name="coada-serverless"
+rootProject.buildFileName="build-local.gradle"
