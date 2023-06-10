@@ -1,0 +1,1 @@
+docker run -d -p 8000:8000 --name docker_registry --network=ms-net img_registry_microservice:v1
